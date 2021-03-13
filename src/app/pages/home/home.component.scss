@@ -1,0 +1,34 @@
+@import '../../scss/color.scss';
+@import '../../scss/constant.scss';
+
+
+_main{
+    width: 100%;
+    height: 100%;
+}
+.header_main
+{
+    width: 100%;
+    height: fit-content;
+    padding: 1%;
+    background-color: $primary_color;
+}
+.title{
+    color: $background_color;
+    font-size: $_heading_font_size;
+    font-family: $font_family;
+    font-weight: $_heading_font_weight;
+
+}
+.home_image{
+    background-image: url(https://assets.flightscanner.com/assets/images/hp-image.jpeg);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 320px;
+    margin: 0 auto;
+    min-height: 220px;
+    max-height: 480px;
+    -webkit-transition: opacity .2s ease-in;
+    width: 100%;
+}
