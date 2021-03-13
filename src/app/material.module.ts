@@ -7,7 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
-
+import {FlexLayoutModule  } from "@angular/flex-layout";
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -17,7 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   imports: [
@@ -30,17 +30,18 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatSidenavModule,
     MatToolbarModule,
     MatDividerModule,
-    
+    FlexLayoutModule,
     MatDialogModule,
     MatSnackBarModule,
     MatTabsModule,
     MatTooltipModule,
- 
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
     MatMenuModule,
     MatAutocompleteModule,
+MatSelectModule,    
+    
     
   ],
   exports: [
@@ -56,14 +57,16 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatSnackBarModule,
     MatTabsModule,
     MatTooltipModule,
-   
+    MatSelectModule,
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
     MatMenuModule,
     BrowserAnimationsModule,
   MatAutocompleteModule,
-  FormsModule
+  FormsModule,
+  FlexLayoutModule,
+  
 
   ]
 

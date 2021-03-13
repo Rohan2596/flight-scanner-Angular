@@ -12,7 +12,7 @@ import { SearchFlightComponent } from './components/search-flight/search-flight.
   declarations: [
     AppComponent,
     HomeComponent,
-    SearchFlightComponent
+    SearchFlightComponent,
   ],
   imports: [
     BrowserModule,

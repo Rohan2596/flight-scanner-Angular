@@ -2,7 +2,7 @@
 @import '../../scss/constant.scss';
 
 
-_main{
+.main{
     width: 100%;
     height: 100%;
 }
@@ -10,11 +10,12 @@ _main{
 {
     width: 100%;
     height: fit-content;
-    padding: 1%;
     background-color: $primary_color;
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 .title{
-    color: $background_color;
+    color: snow;
     font-size: $_heading_font_size;
     font-family: $font_family;
     font-weight: $_heading_font_weight;
@@ -31,4 +32,9 @@ _main{
     max-height: 480px;
     -webkit-transition: opacity .2s ease-in;
     width: 100%;
+}
+.search_sailing{
+    width: 80%;
+    height: 30%;
+    margin-top: -4%;
 }
