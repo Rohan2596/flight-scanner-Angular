@@ -7,22 +7,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatListModule } from '@angular/material/list';
-import { MatTreeModule } from '@angular/material/tree';
+
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatSelectModule } from '@angular/material/select';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatExpansionModule } from '@angular/material/expansion';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import {MatBadgeModule} from '@angular/material/badge';
+
 
 @NgModule({
   imports: [
@@ -34,23 +29,18 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatButtonModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatChipsModule,
     MatDividerModule,
-    MatListModule,
-    MatTreeModule,
+    
     MatDialogModule,
     MatSnackBarModule,
     MatTabsModule,
     MatTooltipModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatExpansionModule,
+ 
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
     MatMenuModule,
     MatAutocompleteModule,
-    MatBadgeModule
     
   ],
   exports: [
@@ -58,32 +48,26 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatCardModule,
     MatInputModule,
     MatIconModule,
-    MatChipsModule,
     MatButtonModule,
     MatSidenavModule,
     MatToolbarModule,
     MatDividerModule,
-    MatListModule,
-    MatTreeModule,
-    MatDialogModule,
+   MatDialogModule,
     MatSnackBarModule,
     MatTabsModule,
     MatTooltipModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatExpansionModule,
+   
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
     MatMenuModule,
     BrowserAnimationsModule,
   MatAutocompleteModule,
-  MatBadgeModule,
   FormsModule
 
   ]
 
 })
-export class Material {
+export class MaterialModule{
   static forRoot: any;
 }
