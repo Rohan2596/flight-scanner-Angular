@@ -18,6 +18,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSelectModule} from '@angular/material/select';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import {MatSelectModule} from '@angular/material/select';
     ReactiveFormsModule,
     MatMenuModule,
     MatAutocompleteModule,
-MatSelectModule,    
+MatSelectModule, 
+ScrollingModule   
     
     
   ],
@@ -66,6 +68,7 @@ MatSelectModule,
   MatAutocompleteModule,
   FormsModule,
   FlexLayoutModule,
+  ScrollingModule
   
 
   ]

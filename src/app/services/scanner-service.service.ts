@@ -13,15 +13,10 @@ export class ScannerServiceService {
 
   constructor(private http:HttpClient) { }
 
-  public getCountryCodes(url:any):any{
+  public getCodes(url:any):any{
     return this.http.get(this.baseurl+url);
   }
 
-  public getUnCodes(url:any):any{
-    return this.http.get(this.baseurl+url);
-  }
 
-  // public getSchedule(url:any,from:any,to:any):any{
-  // }
 
 }

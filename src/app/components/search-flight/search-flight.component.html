@@ -11,20 +11,43 @@
         </mat-form-field>
         </div>
         <div class="search_input" fxLayout="row" fxLayoutAlign="space-between center" >
-            <mat-form-field appearance="outline"  class="form-field1 "  fxLayout="row" fxLayoutAlign="center center" >
+          <form class="form-field1 ">   
+          <mat-form-field appearance="outline"    fxLayout="row" fxLayoutAlign="center center" >
                 <mat-label>From</mat-label>
-                <mat-select disableRipple>
-                  <mat-option value="country">Country</mat-option>
-                  <mat-option value="uncode">UNCode</mat-option>
-                </mat-select>
+                <input type="text"
+                placeholder="From"
+                aria-label="From"
+                matInput
+                [matAutocomplete]="auto"
+                [formControl]="myControl">
+         <mat-autocomplete  #auto="matAutocomplete"  [displayWith]="displayValue">
+          <cdk-virtual-scroll-viewport itemSize="18" style="height:80vh">
+          <mat-option *cdkVirtualFor="let option of options" [value]="option">
+             {{option.name}}
+           </mat-option>
+          </cdk-virtual-scroll-viewport>
+         </mat-autocomplete>
             </mat-form-field>
-        <mat-form-field appearance="outline"  class="form-field1 "  fxLayout="row" fxLayoutAlign="center center" >
+          </form>
+          <form  class="form-field1 ">
+        <mat-form-field appearance="outline"   fxLayout="row" fxLayoutAlign="center center" >
             <mat-label>To</mat-label>
-            <mat-select disableRipple>
-              <mat-option value="country">Country</mat-option>
-              <mat-option value="uncode">UNCode</mat-option>
-            </mat-select>
+            <input type="text"
+                placeholder="To"
+                aria-label="To"
+                matInput
+                [matAutocomplete]="auto">
+         <mat-autocomplete  #auto="matAutocomplete"  [displayWith]="displayValue">
+          <cdk-virtual-scroll-viewport itemSize="18" style="height:80vh">
+ 
+          <mat-option *cdkVirtualFor="let option of options" [value]="option.name">
+             {{option.name}}
+           </mat-option>
+          </cdk-virtual-scroll-viewport>
+
+         </mat-autocomplete>
         </mat-form-field>
+      </form>
     </div>
       
 </div>

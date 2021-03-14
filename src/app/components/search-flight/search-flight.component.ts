@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ScannerServiceService } from '../../services/scanner-service.service';
+import {FormControl} from '@angular/forms';
+
 
 @Component({
   selector: 'app-search-flight',
@@ -8,21 +10,44 @@ import { ScannerServiceService } from '../../services/scanner-service.service';
 })
 export class SearchFlightComponent implements OnInit {
   selected = '';
+  myControl = new FormControl();
+  options: string[]=[];
 
   constructor(private SearchService:ScannerServiceService) { }
 
   ngOnInit(): void {
+    this.selected="country"
+   this.someMethod(this.selected)
+   
   }
+ 
+ 
+displayValue(subject){
+  return subject? subject.name:undefined;
+}
+
 
   someMethod(value){
     console.log(value);
     this.selected=value;
 
-    this.SearchService.getCountryCodes('codes/countries').subscribe(
-      (response: any) => {
-    //  this.note = response;
-     console.log(response);
-      });
+    if(this.selected==='country'){
+      this.SearchService.getCodes('codes/countries').subscribe(
+        (response: any) => {
+            this.options=response;
+        });  
+    }
+
+    if(this.selected==='uncode'){
+      this.SearchService.getCodes('codes/locations').subscribe(
+        (response: any) => {
+          console.log(response);
+          
+               this.options=response;
+        });
+      // console.log(this.options);
+  
+    }
 
   }
 }

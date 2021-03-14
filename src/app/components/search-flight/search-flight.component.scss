@@ -12,13 +12,13 @@
     padding-top: 2%;
     width: 100%;
     height: 85px;
-
+    color: snow;
 }
 .form-field1 {
     padding-top: 2%;
     width: 50%;
     height: 85px;
-
+    color: snow;
 }
 .search_input{
 
@@ -28,7 +28,7 @@
     display: contents;
 }
 .inputs {
-    
+    color: snow;
     padding-bottom: 1%;
     padding-top: 1%;
     display: contents;
@@ -46,15 +46,3 @@
     color:  $input_text_color !important;
     cursor: pointer;
 }
-// :host ::ng-deep .mat-form-field-flex {
-//     display: inline-flex;
-//     align-items: center;
-//     box-sizing: border-box;
-//     width: 100%;
-//     height: 3.75em;
-//     cursor: pointer;
-// }
-// :host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
-//     padding: 0.5em 0 1em 0;
-//     cursor: pointer;
-// }
