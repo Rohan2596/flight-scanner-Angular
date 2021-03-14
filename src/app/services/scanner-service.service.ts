@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-const httpOptions = {
-  headers: new HttpHeaders().set( 'Content-Type', 'application/json')
-  .set('Access-Control-Allow-Origin', '*')
-  .set('Access-Control-Allow-Headers', '*')
-};
+import { HttpClient, HttpHeaders ,HttpParams} from '@angular/common/http';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -18,5 +14,13 @@ export class ScannerServiceService {
   }
 
 
+ 
+  public getSchedule(url:any,from:any,to:any):any{
+    let params = new HttpParams();
+    params = params.append('from', from);
+    params = params.append('to', to);
+
+    return this.http.get(this.baseurl+url,{params:params});
+  }
 
 }

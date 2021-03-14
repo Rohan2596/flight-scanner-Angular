@@ -1,10 +1,10 @@
 <div class="main">
-    <div  style="width: 100%;height: 100%;" fxLayout="column">
+    <div  style="width: 100%;height: 100%;" fxLayout="column" fxLayoutAlign="center center">
 
         <div class="inputs">
         <mat-form-field appearance="outline"  class="form-field "  fxLayout="row" fxLayoutAlign="center center" >
             <mat-label>Please Select Country or UNCode</mat-label>
-            <mat-select [(value)]="selected"  disableRipple (selectionChange)="someMethod($event.value)">
+            <mat-select [(value)]="selected"  disableRipple (selectionChange)="someMethod($event)">
               <mat-option value="country">Countries Codes</mat-option>
               <mat-option value="uncode">UN Codes</mat-option>
             </mat-select>
@@ -18,36 +18,40 @@
                 placeholder="From"
                 aria-label="From"
                 matInput
-                [matAutocomplete]="auto"
-                [formControl]="myControl">
-         <mat-autocomplete  #auto="matAutocomplete"  [displayWith]="displayValue">
+                [formControl]="namesControl" 
+                [matAutocomplete]="auto">
+         <mat-autocomplete  #auto="matAutocomplete"  [displayWith]="displayValue" (optionSelected)="optionSelectFrom($event)">
           <cdk-virtual-scroll-viewport itemSize="18" style="height:80vh">
-          <mat-option *cdkVirtualFor="let option of options" [value]="option">
+          <mat-option *cdkVirtualFor="let option of options" [value]="option"  >
              {{option.name}}
            </mat-option>
           </cdk-virtual-scroll-viewport>
          </mat-autocomplete>
             </mat-form-field>
           </form>
+          <div class="example-button-container">
+            <button mat-fab color="accent" aria-label="Example icon button with a plus one icon">
+              <mat-icon>east</mat-icon>
+            </button>
+          </div>
           <form  class="form-field1 ">
         <mat-form-field appearance="outline"   fxLayout="row" fxLayoutAlign="center center" >
-            <mat-label>To</mat-label>
-            <input type="text"
-                placeholder="To"
-                aria-label="To"
-                matInput
-                [matAutocomplete]="auto">
-         <mat-autocomplete  #auto="matAutocomplete"  [displayWith]="displayValue">
-          <cdk-virtual-scroll-viewport itemSize="18" style="height:80vh">
- 
-          <mat-option *cdkVirtualFor="let option of options" [value]="option.name">
-             {{option.name}}
-           </mat-option>
-          </cdk-virtual-scroll-viewport>
-
-         </mat-autocomplete>
+          <mat-label>TP</mat-label>
+          <input type="text"
+          placeholder="To"
+          aria-label="To"
+          matInput
+          [formControl]="myControl" 
+          [matAutocomplete]="autoTwo">
+   <mat-autocomplete  #autoTwo="matAutocomplete"  [displayWith]="displayValue" (optionSelected)="optionSelectTo($event)">
+    <cdk-virtual-scroll-viewport itemSize="18" style="height:80vh">
+    <mat-option *cdkVirtualFor="let option of options" [value]="option"  >
+       {{option.name}}
+     </mat-option>
+    </cdk-virtual-scroll-viewport>
+   </mat-autocomplete>
         </mat-form-field>
       </form>
     </div>
-      
+    <button mat-raised-button style="background-color: #f23f81;width :60%" (click)="onSearch()">Search</button>
 </div>
