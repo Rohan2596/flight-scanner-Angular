@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { ScannerServiceService } from '../../services/scanner-service.service';
 import { FormControl } from '@angular/forms';
+import { DataService } from 'src/app/services/data.service';
+import { ThrowStmt } from '@angular/compiler';
 
 
 
@@ -16,11 +18,14 @@ export class SearchFlightComponent implements OnInit {
   options: string[] = [];
   form = '';
   to = '';
-  constructor(private SearchService: ScannerServiceService) { }
+  message:string;
+
+  constructor(private SearchService: ScannerServiceService,
+    private dataService:DataService
+    ) { }
 
   ngOnInit(): void {
-    this.selected = "country"
-    this.someMethod(this.selected)
+   this.dataService.currentMessage.subscribe(message => this.message)
 
   }
 
@@ -31,9 +36,9 @@ export class SearchFlightComponent implements OnInit {
 
 
   someMethod(value) {
-    console.log(this.myControl.value);
-    console.log(this.namesControl.value);
-    this.selected = value;
+    console.log(value);
+    
+    this.selected = value.value;
 
     if (this.selected === 'country') {
       this.SearchService.getCodes('codes/countries').subscribe(
@@ -56,8 +61,8 @@ export class SearchFlightComponent implements OnInit {
   }
   optionSelectFrom(event) {
     if (this.selected == 'uncode') {
-      console.log(event.option.value.uncode);
-      this.form = event.option.value.uncode
+      console.log(event.option.value.unCode);
+      this.form = event.option.value.unCode
 
     }
     if (this.selected == 'country') {
@@ -70,8 +75,8 @@ export class SearchFlightComponent implements OnInit {
     console.log(event);
 
     if (this.selected == 'uncode') {
-      console.log(event.option.value.uncode);
-      this.to = event.option.value.uncode
+      console.log(event.option.value.unCode);
+      this.to = event.option.value.unCode
 
     }
 
@@ -88,8 +93,13 @@ export class SearchFlightComponent implements OnInit {
       (response: any) => {
         console.log(response);
         this.options = response;
-      }, (error) => {                              //Error callback
-        console.log(error);
+        this.dataService.changeMessage(this.options)
+
+      }, (error) => {      
+        this.options[0]='Incorrect Input Please select different locations.'                        //Error callback
+        //console.log(error);
+        this.dataService.changeMessage(this.options)
+
       }
     );
   }

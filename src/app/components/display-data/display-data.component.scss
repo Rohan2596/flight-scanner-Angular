@@ -1,0 +1,24 @@
+@import 'src/app/scss/color.scss';
+@import 'src/app/scss/constant.scss';
+
+.displayCard{
+    width: 30%;
+    height: fit-content;
+    padding: 1%;
+    background-color: whitesmoke;
+      &:hover{
+        box-shadow: 5px 10px #888888;
+      }
+}
+.carrier{
+    width: 100%;
+    height: fit-content;
+    padding: 1%;
+    background-color: whitesmoke;
+}
+.fieldName{
+    color: black;
+    font-weight: 500;
+    text-decoration: underline;
+    width: 45%;
+}

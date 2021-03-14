@@ -8,12 +8,15 @@ import { MaterialModule } from './material.module';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchFlightComponent } from './components/search-flight/search-flight.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DisplayDataComponent } from './components/display-data/display-data.component';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchFlightComponent,
+    DisplayDataComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
