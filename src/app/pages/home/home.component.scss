@@ -43,3 +43,19 @@
  width: 80%;
  height: 40%;   
 }
+
+@media only screen and (max-width: 456px) {
+    
+   
+   
+    .search_sailing{
+        width: 95%;
+        height: fit-content;
+        margin-top: -22%;
+    }
+    .display_data{
+    
+     width: 80%;
+     height: 40%;   
+    }
+}

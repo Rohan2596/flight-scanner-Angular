@@ -1,5 +1,5 @@
-<div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px" style="width: 100%;">
-<div *ngFor="let item of options"  [displayWith]="displayValue"  style="width: 30%; margin-top: 1%;">
+<div class="main"  fxLayoutGap="20px" style="width: 100%;">
+<div *ngFor="let item of options"  [displayWith]="displayValue" class="display" >
     <div *ngIf="options.length==0">
            <span>Incorrect Locations Entered Please Find Different locations</span>
     </div>
