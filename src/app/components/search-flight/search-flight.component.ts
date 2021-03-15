@@ -37,7 +37,6 @@ export class SearchFlightComponent implements OnInit {
 
 
   someMethod(value) {
-    console.log(value);
     
     this.selected = value.value;
 
@@ -51,38 +50,36 @@ export class SearchFlightComponent implements OnInit {
     if (this.selected === 'uncode') {
       this.SearchService.getCodes('codes/locations').subscribe(
         (response: any) => {
-          console.log(response);
-
           this.options = response;
         });
-      // console.log(this.options);
+   
 
     }
 
   }
   optionSelectFrom(event) {
     if (this.selected == 'uncode') {
-      console.log(event.option.value.unCode);
+    
       this.form = event.option.value.unCode
 
     }
     if (this.selected == 'country') {
-      console.log(event.option.value.code);
+    
       this.form = event.option.value.code
 
     }
   }
   optionSelectTo(event) {
-    console.log(event);
+   
 
     if (this.selected == 'uncode') {
-      console.log(event.option.value.unCode);
+    
       this.to = event.option.value.unCode
 
     }
 
     if (this.selected == 'country') {
-      console.log(event.option.value.code);
+     
       this.to = event.option.value.code
 
     }
@@ -92,14 +89,13 @@ export class SearchFlightComponent implements OnInit {
   onSearch() {
     this.SearchService.getSchedule('schedules', this.form, this.to).subscribe(
       (response: any) => {
-        console.log(response);
+      
         this.data = response;
         this.dataService.changeMessage(this.data)
         this.data=[];
 
       }, (error) => {      
-                               //Error callback
-       // console.log(error);
+                           
        this.dataService.changeMessage(this.data)
         this.data=[];
       }

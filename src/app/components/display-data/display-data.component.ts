@@ -12,17 +12,15 @@ export class DisplayDataComponent implements OnInit {
   constructor(private dataService: DataService, private SearchService: ScannerServiceService) { }
   options: any[] = [];
   ngOnInit(): void {
-
+    
     this.dataService.currentMessage.subscribe(message => this.reciveMessage(message));
-    console.log(this.options);
-
+ 
   }
 
   reciveMessage(message) {
     console.log("Recive message" + message);
     this.options = message
-    console.log(this.options);
-
+  
 
 
   }
