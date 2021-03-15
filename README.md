@@ -1,26 +1,36 @@
-# AngularFlightScanner
+# Application Name :- Sailing Scanner(Angular)
+##  Sailing Scanner aims to solve the problem of finding sailing routes.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
+## How to used applications:-
+### Step 1:
+#### Clone project from github link / Extract file form zip
 
-## Development server
+### Step 2:
+#### After Cloning the project do  <npm i> for importing the all required node modules for the project.
+```sh
+npm i
+```
+### Step 3:
+#### Do ng serve command to run the project 
+```sh
+ng serve
+```
+####  Note:-  If cros errors occurs need to unable the cros plugin in browser 
+### Step 4 :
+#### Please Select type Countries /unCode
+### Step 5 :
+#### Please Select From  and to 
+ 
+### Steps 6 :
+#### Finally hit search button
+ 
+### Step 7 :
+#### If no data is found change the from and to locations
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+##### Author
+##### Rohan Ravindra Kadam 
+##### Full Stack Developer / Software Deveolper
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 
