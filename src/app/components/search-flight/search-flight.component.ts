@@ -15,10 +15,11 @@ export class SearchFlightComponent implements OnInit {
   selected = '';
   myControl = new FormControl();
   namesControl = new FormControl();
-  options: string[] = [];
+  options: any[] = [];
   form = '';
   to = '';
   message:string;
+  data:any[]=[];
 
   constructor(private SearchService: ScannerServiceService,
     private dataService:DataService
@@ -92,14 +93,15 @@ export class SearchFlightComponent implements OnInit {
     this.SearchService.getSchedule('schedules', this.form, this.to).subscribe(
       (response: any) => {
         console.log(response);
-        this.options = response;
-        this.dataService.changeMessage(this.options)
+        this.data = response;
+        this.dataService.changeMessage(this.data)
+        this.data=[];
 
       }, (error) => {      
-        this.options[0]='Incorrect Input Please select different locations.'                        //Error callback
-        //console.log(error);
-        this.dataService.changeMessage(this.options)
-
+                               //Error callback
+       // console.log(error);
+       this.dataService.changeMessage(this.data)
+        this.data=[];
       }
     );
   }

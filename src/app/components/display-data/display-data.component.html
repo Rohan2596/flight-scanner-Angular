@@ -1,41 +1,57 @@
-<p>Please Enter Correct From and To locations.</p>
-
-<div class="displayCard" fxLayout="column" fxLayoutAlign="space-around start">
-    <div class="carrier" fxLayout="column" fxLayoutAlign="space-around start">
-        <div fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
-            <span class="fieldName">Carrier Name :-  </span>
-            <span>Carrier Name</span>
-        </div>
-        <div  fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
-            <span class="fieldName">Scac Name</span>
-            <span>Scac Name</span>
-        </div>
+<div fxLayout="row wrap" fxLayoutAlign="center" fxLayoutGap="20px" style="width: 100%;">
+<div *ngFor="let item of options"  [displayWith]="displayValue"  style="width: 30%; margin-top: 1%;">
+    <div *ngIf="options.length==0">
+           <span>Incorrect Locations Entered Please Find Different locations</span>
     </div>
-
-    <div class="carrier"  fxLayout="column" fxLayoutAlign="space-around start" >
-        <div fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
-            <span class="fieldName">Name</span>
-            <span>Port Discharge</span>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
-            <span class="fieldName">Port Discharge</span>
-            <span>Scac Name</span>
-        </div>
-    </div>
-    <div class="carrier" fxLayout="column" fxLayoutAlign="space-around start" >
-        <div fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
-            <span class="fieldName">Name</span>
-            <span>Port Discharge</span>
-        </div>
-        <div fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
-            <span class="fieldName">Port Discharge</span>
-            <span>Scac Name</span>
-        </div>
-    </div>
-    <div class="carrier"  fxLayout="column" fxLayoutAlign="space-around start" style="width: 100%;">
-        <span>Vessel Name</span>
-        <span>imoNumber</span>
-        <span>voyage Number</span>
-        
-    </div>
+    <div *ngIf="options?.length>0" >
+        <div class="displayCard" fxLayout="column" fxLayoutAlign="space-around start"  >
+            <div class="carrier" fxLayout="column" fxLayoutAlign="space-around start">
+                <div fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
+                    <span class="fieldName">Carrier Name</span>
+                    <span class="fieldName">:- {{item.carrier.name}}</span>
+                </div>
+                <div  fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
+                    <span class="fieldName">Scac</span>
+                    <span class="fieldName">:- {{item.carrier.scac}}</span>
+                </div>
+            </div>
+              <span class="title" >Port of Discharge</span>
+            <div class="carrier"  fxLayout="column" fxLayoutAlign="space-around start" >
+                <div fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
+                    <span class="fieldName">Name</span>
+                    <span class="fieldName">:- {{item.portOfDischarge.name}}</span>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
+                    <span class="fieldName">Country Code</span>
+                    <span class="fieldName">:- {{item.portOfDischarge.countryCode}}</span>
+                </div>
+            </div>
+            <span class="title"  >Port Of Loading</span>
+            <div class="carrier"  fxLayout="column" fxLayoutAlign="space-around start" >
+                <div fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
+                    <span class="fieldName">Name</span>
+                    <span class="fieldName"> :- {{item.portOfLoading.name}}</span>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
+                    <span class="fieldName">Country Code</span>
+                    <span class="fieldName">:- {{item.portOfLoading.countryCode}}</span>
+                </div>
+            </div>
+            <div class="carrier"  fxLayout="column" fxLayoutAlign="space-around start" style="width: 100%;">
+                <div fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
+                    <span class="fieldName"> Vessel Name </span>
+                    <span class="fieldName" style="width: 60%;">:- {{item.vessel.name}}</span>
+                </div>
+                   <div fxLayout="row" fxLayoutAlign="start center" style="width: 100%;">
+                    <span class="fieldName"> Voyage Number </span>
+                    <span class="fieldName">:-  {{item.voyageNumber}}</span>
+                </div>
+            </div>
+        </div>        
+ </div>
 </div>
+
+</div>
+
+
+

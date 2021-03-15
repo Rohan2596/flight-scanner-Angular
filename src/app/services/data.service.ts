@@ -6,14 +6,14 @@ import { BehaviorSubject } from "rxjs";
 @Injectable()
 export class DataService{
 
-    message:object;
-    private messageSource=new BehaviorSubject<object>(new Object());
+    message:object[]=[];
+    private messageSource=new BehaviorSubject<object[]>([]);
 
     currentMessage =this.messageSource.asObservable();
 
     constructor(){}
 
-    changeMessage(message:object){
+    changeMessage(message:object[]){
         this.messageSource.next(message);
     }
 }
