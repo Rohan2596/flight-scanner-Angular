@@ -17,21 +17,17 @@ ng serve
 ```
 ####  Note:-  If cros errors occurs need to unable the cros plugin in browser 
 ### Step 4 :
-#### Please Select type Countries /unCode
+```Please Select type Countries /unCode```
+
 ### Step 5 :
-#### Please Select From  and to 
+```Please Select From  and to ```
  
 ### Steps 6 :
-#### Finally hit search button
+``` Finally hit search button```
  
 ### Step 7 :
-#### If no data is found change the from and to locations
+```If no data is found change the from and to locations```
 
 ##### Author
 ##### Rohan Ravindra Kadam 
 ##### Full Stack Developer / Software Deveolper
-
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
